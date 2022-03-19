@@ -11,5 +11,6 @@
     });
     $site_path = realpath(dirname(__FILE__));
     define('__SITE_PATH', $site_path);
-    $action = isset($_GET['action']) ? $_GET['action'] : 'home';
-    include_once $action.'/index.php';
+    $action = isset($_GET['action']) ? $_GET['action'] : 'home/index';
+    include_once $action . '.php';
+?>

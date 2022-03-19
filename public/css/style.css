@@ -1,0 +1,131 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: sans-serif;
+}
+/* Định dạng thanh menu ở PC */
+.header{
+    background: linear-gradient(black, #8b8b8b);
+}
+.header .main_menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .main_menu ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.header .main_menu ul li{
+
+}
+.header .main_menu ul li:hover{
+    background-color: #8b8b8b;
+}
+.header .main_menu ul li a{
+    color: #fff;
+    text-decoration: none;
+    height: 50px;
+    display: block;
+    line-height: 50px;
+    width: 100px;
+    text-align: center;
+    font-size: 13px;
+}
+.header .main_menu .timkiem_gr{
+    display: flex;
+    align-items: center;
+    width: 340px;
+}
+
+.header .main_menu .timkiem_gr .timkiem_txt{
+    height: 30px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-right: 0px;
+    padding: 10px;
+    border: none;
+    color: #747474;
+}
+.header .main_menu .timkiem_gr .timkiem_txt:focus{
+    outline: none;
+}
+.header .main_menu .timkiem_gr .timkiem_btn{
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.header .main_menu .giohang_gr{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+.header .main_menu .giohang_gr .giohang_sl{
+    position: absolute;
+    top: 6px;
+    right: 4px;
+    font-size: 13px;
+    background-color: #0e8aed;
+    width: 20px;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 12px;
+}
+.header .main_menu .nguoidung_gr{
+    display: flex;
+    align-items: center;
+}
+.header .main_menu .nguoidung_gr .nguoidung_dn{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    width: 76px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+}
+.header .main_menu .nguoidung_gr .nguoidung_dn:hover{
+    background-color: #8b8b8b;   
+}
+.header .main_menu .nguoidung_gr .nguoidung_dx{
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    width: 76px;
+    text-align: center; 
+    cursor: pointer;
+    font-size: 13px;
+}
+.header .main_menu .nguoidung_gr .nguoidung_dx:hover{
+    background-color: #8b8b8b;   
+}
+.home_gr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.home_gr .home_img{
+    width: 28px;
+    height: 28px;
+}
