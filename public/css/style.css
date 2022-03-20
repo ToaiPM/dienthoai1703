@@ -9,30 +9,31 @@ html,body{
 /* Định dạng thanh menu ở PC */
 .header{
     background: linear-gradient(black, #8b8b8b);
+    margin-bottom: 4px;
 }
 .header .main_menu{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.header .main_menu ul{
+.header .main_menu > ul{
     display: flex;
     align-items: center;
     list-style: none;
 }
-.header .main_menu ul li{
-
+.header .main_menu > ul > li{
+    position: relative;
 }
 .header .main_menu ul li:hover{
     background-color: #8b8b8b;
 }
-.header .main_menu ul li a{
+.header .main_menu > ul > li > a{
     color: #fff;
     text-decoration: none;
     height: 50px;
     display: block;
     line-height: 50px;
-    width: 100px;
+    width: 86px;
     text-align: center;
     font-size: 13px;
 }
@@ -70,13 +71,14 @@ html,body{
     font-size: 22px;
     cursor: pointer;
     position: relative;
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     line-height: 50px;
+    margin: 0 4px;
 }
 .header .main_menu .giohang_gr .giohang_sl{
     position: absolute;
-    top: 6px;
+    top: 9px;
     right: 4px;
     font-size: 13px;
     background-color: #0e8aed;
@@ -128,4 +130,35 @@ html,body{
 .home_gr .home_img{
     width: 28px;
     height: 28px;
+}
+.header .sub_menu{
+    position: absolute;
+    background-color: #fff;
+    list-style: none;
+    box-shadow: 0px 0px 3px #7e7d7d;
+    display: none;
+}
+.header .sub_menu li a:hover{
+    color: #fff;
+}
+.header .sub_menu li  a{
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    min-width: 120px;   
+}
+.header .main_menu > ul > li:hover .sub_menu{
+    display: block;
+}
+
+/* banner img */
+.banner_gr{
+
+}
+.banner_gr .banner_img{
+
 }
