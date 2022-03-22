@@ -3,7 +3,7 @@
         private $server = 'localhost';
         private $username = 'root';
         private $password = '';
-        private $database = 'cuahangdienthoai';
+        private $database = 'dienthoai1703';
 
         public function setServer($server){$this->server = $server;}
         public function getServer(){return $this->server;}

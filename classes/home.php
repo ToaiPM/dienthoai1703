@@ -4,7 +4,8 @@
             $sql = "SELECT
                 dt.dien_thoai_id,
                 dt.dien_thoai_ten,
-                dt.dien_thoai_gia_ban,
+                dt.dien_thoai_gia_hien_tai,
+                dt.dien_thoai_gia_cu,
                 dt.dien_thoai_hinh_anh,
                 hsx.hang_san_xuat_ten 
             FROM

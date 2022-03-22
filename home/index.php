@@ -8,24 +8,9 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/all.min.css">
+    <link rel="stylesheet" href="/home/css/style.css">
     <script src="/public/js/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            function DanhSach(){
-                $.ajax({
-                    type: 'POST',
-                    url: '/home/home_danh_sach.php',
-                    data: {
-                    },
-                    dataType: 'html',
-                    success: function(res){
-                        $('#danhsach').html(res);
-                    }
-                });
-            }
-            DanhSach();
-        });
-    </script>
+    
     <title>Trang home</title>
 </head>
 <body>
@@ -43,5 +28,22 @@
 
     <!-- Footer -->
     <?php include_once __SITE_PATH . '/layouts/footer.php'; ?>
+    <script>
+        function DanhSach(){
+            $.ajax({
+                type: 'POST',
+                url: '/home/home_danh_sach.php',
+                data: {
+                    TimKiem: $('#TimKiem').val(),
+                    tranghientai: $('#TrangHienTai').val()
+                },
+                dataType: 'html',
+                success: function(kq){
+                    $('#danhsach').html(kq)
+                }
+            });
+        }
+        DanhSach();
+    </script>
 </body>
 </html>

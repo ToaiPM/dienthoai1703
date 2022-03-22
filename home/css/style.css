@@ -1,0 +1,169 @@
+.content{
+    border: 1px solid #d3d1d0;
+    padding-bottom: 8px;
+}
+.hinhanh{
+
+}
+.name{
+    font-size: 16px;
+    padding: 5px 15px;
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 15px;
+}
+.price_old{
+    font-size: 16px;
+    color: #333;
+    text-decoration-line: line-through;
+}
+.price_curent{
+    font-size: 16px;
+    color: red;
+}
+.hanhdong{
+    display: flex;
+    align-items: center;
+    margin: 5px 15px;
+}
+.mua{
+    padding: 5px 14px;
+    background: #221f1f;
+    color: #fff;
+    margin: 0px 2px;
+    border: 1px solid #333;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+.xem{
+    padding: 5px 14px;
+    background: #1A3EED;
+    color: #fff;
+    margin: 0px 2px;
+    border: 1px solid #03135e;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Thông báo dữ liệu rỗng */
+.dulieurong{
+    margin: 5px 0px;
+    padding: 5px 0px;
+    text-align: center;
+}
+.thongbao{
+    color: #f24907;
+    font-size: 16px;
+    font-weight: 600;
+}
+.icon_thongbao{
+    color: #f24907;
+    font-size: 16px;
+}
+
+/* Khi có dữ liệu */
+.soluongdt_home{
+    margin: 10px 0px 5px 10px;
+    color: red;
+}
+
+/* Định dạng nút phân trang */
+.PhanTrang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ClickPage{
+    padding: 0 4px;
+  }
+  .SoTrang{
+    padding: 0 4px;
+  }
+  .CurrentPage{
+    color:red;
+  }
+
+  /* Footer */
+  .footer{
+    background-color: #383838;
+    padding: 25px 0px 0px 0px;
+  }
+  .footer_content{
+
+  }
+  .gioithieu{
+    color: #fff;
+    padding: 15px 0px 5px 0px;
+  }
+  .hotrokhachhang{
+    color: #fff;
+    padding: 15px 0px 5px 0px;
+  }
+  .lienhe{
+    color: #fff;
+    padding: 15px 0px 5px 0px;
+  }
+.footer .footer_content ul{
+    list-style: none;
+}
+.footer .footer_content ul li a:hover{
+      color: rgb(247, 144, 9);
+}
+.footer .footer_content ul a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    padding: 5px 0px;     
+}
+.logo_bocongthuong{
+    margin: 5px 0px;
+    width: 150px;
+}
+@media (max-width: 540px){
+    .footer_content{
+        padding: 0px 50px;
+    }  
+    .hotline_text{
+        text-align: center;
+    }
+    .banquyen{
+        padding: 0px 50px;
+    }
+    
+}
+.banquyen{
+    background-color: #824a1a;
+    position: relative;
+    margin-top: 60px;
+}
+.banquyen_title{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-align: right;
+    padding: 13px 0px;
+}
+.hotline{
+    position: absolute;
+    color: #fff;
+    background-color: #53ac19;
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 20px;
+    top: -52px;
+}
+.hotline_text{
+    color: #f0bc10;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+}
+.footer .footer_content ul li a .fa-solid{
+    font-size: 12px;
+}

@@ -24,8 +24,8 @@
             </li>
         </ul>
         <div class="timkiem_gr">
-            <input type="text" class="timkiem_txt" placeholder="Bạn cần tìm sản phẩm nào ...">
-            <button class="timkiem_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" id="TimKiem" class="timkiem_txt" placeholder="Bạn cần tìm sản phẩm nào ...">
+            <button onclick="DanhSach()" class="timkiem_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="giohang_gr">
             <i class="fa-solid fa-cart-shopping"></i>
