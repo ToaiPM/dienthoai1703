@@ -162,3 +162,74 @@ html,body{
 .banner_gr .banner_img{
 
 }
+
+/* Modal đăng nhập */
+.modal_dangnhap{
+    position: fixed;
+    background-color: rgba(0,0,0,0.3);
+    top: -80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.active_modal_dangnhap{
+    display: flex;
+}
+.modal_dangnhap_content{
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.modal_dangnhap_header{
+    padding: 8px 12px;
+    background-color: #0698f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.modal_dangnhap_title{
+    color: #fff;
+    font-size: 16px;
+}
+.modal_dangnhap_icon{
+    width: 26px;
+    cursor: pointer;
+}
+.modal_dangnhap_body{
+    display: flex;
+    flex-direction: column;
+    margin: 12px 12px;
+}
+.modal_dangnhap_text{
+    width: 220px;
+    margin: 6px 0px;
+    padding: 3px 5px;
+    font-size: 14px;
+}
+.modal_dangnhap_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.modal_dangnhap_submit{
+    padding: 5px 5px;
+    margin: 0px 2px;
+    width: 80px;
+    color: #fff;
+    background-color: #0698f0;
+    border: 1px solid #0698f0;
+    cursor: pointer;
+}
+.modal_dangnhap_huy{
+    padding: 5px 5px;
+    margin: 0px 2px;
+    width: 80px;
+    color: #fff;
+    background-color: #0b0b0ba8;
+    border: 1px solid #0b0b0b69;
+    cursor: pointer;
+}

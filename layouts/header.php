@@ -32,8 +32,38 @@
             <span class="giohang_sl">0</span>
         </div>
         <div class="nguoidung_gr">
-            <span class="nguoidung_dn">Đăng nhập</span>
+            <span onclick="getDangNhap()" class="nguoidung_dn">Đăng nhập</span>
             <span class="nguoidung_dx">Đăng xuất</span>
         </div>
     </div>
 </div>
+<!-- Modal đăng nhập -->
+<div class="modal_dangnhap">
+    <div class="modal_dangnhap_content">
+        <div class="modal_dangnhap_header">
+            <span class="modal_dangnhap_title">Đăng nhập</span>
+            <img onclick="DongFormDangNhap()" src="/public/img/icon/close_dangnhap_icon.png" alt="" class="modal_dangnhap_icon">
+        </div>
+        <div class="modal_dangnhap_body">
+            <input type="text" id="tendangnhap" class="modal_dangnhap_text" placeholder="Tên đăng nhập">
+            <input type="password" id="matkhau" class="modal_dangnhap_text" placeholder="Mật khẩu">
+        </div>
+        <div class="modal_dangnhap_footer">
+            <button onclick="postDangNhap()" class="modal_dangnhap_submit">Đăng nhập</button>
+            <button onclick="DongFormDangNhap()" class="modal_dangnhap_huy">Hủy</button>
+        </div>
+    </div>
+</div>
+<script>
+        function getDangNhap(){
+            $('#tendangnhap').val('');
+            $('#matkhau').val('');
+            $('.modal_dangnhap').addClass('active_modal_dangnhap');
+        }
+        function DongFormDangNhap(){
+            $('.modal_dangnhap').removeClass('active_modal_dangnhap');
+        }
+        function postDangNhap(){
+            alert(4)
+        }
+</script>
