@@ -42,7 +42,7 @@
         $giacu = $danhsach[$i]['dien_thoai_gia_cu'];
         $giahientai = $danhsach[$i]['dien_thoai_gia_hien_tai'];
     ?>
-    <div class="col l-3 m-6 c-12">
+    <div class="col l-3 m-6 c-12 mtop">
         <div class="content">
             <img class="hinhanh" src="/public/img/products/<?php echo $hinhanh; ?>" alt="" width="100%">
             <div class="name"><?php echo $tendienthoai; ?></div>

@@ -28,10 +28,10 @@
             <input type="text" id="TimKiem" class="timkiem_txt" placeholder="Bạn cần tìm sản phẩm nào ...">
             <button onclick="DanhSach()" class="timkiem_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        <div class="giohang_gr">
+        <a href="/index.php?action=giohang/index" class="giohang_gr">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span class="giohang_sl">0</span>
-        </div>
+            <span id="thongbao_giohang" class="giohang_sl">0</span>
+        </a>
         <div class="nguoidung_gr">
             <span onclick="getDangNhap()" class="nguoidung_dn">Đăng nhập</span>
             <span class="nguoidung_dx">Đăng xuất</span>

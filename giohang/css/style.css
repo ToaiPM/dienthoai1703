@@ -1,0 +1,52 @@
+.thongtingiohang{
+    font-size: 26px;
+}
+.soluongtru{
+    max-width: 32px;
+}
+.soluong{
+    max-width: 32px;
+    text-align: center;
+}
+.soluongcong{
+    max-width: 32px;
+}
+.sanpham{
+    display: flex;
+}
+.tensp_xoa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+}
+.tensp{
+    margin: 0 0;
+}
+.xoa{
+    margin: 0 0;
+    text-decoration: none;
+}
+.dongia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+}
+.nhom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+}
+.thanhtien{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+}
+.thanhtoan{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}

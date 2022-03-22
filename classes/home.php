@@ -7,7 +7,7 @@
                 dt.dien_thoai_gia_hien_tai,
                 dt.dien_thoai_gia_cu,
                 dt.dien_thoai_hinh_anh,
-                hsx.hang_san_xuat_ten 
+                hsx.hang_san_xuat_ten
             FROM
                 dien_thoai dt
             LEFT JOIN hang_san_xuat hsx ON dt.hang_san_xuat_id = hsx.hang_san_xuat_id 

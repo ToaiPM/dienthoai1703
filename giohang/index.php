@@ -8,33 +8,29 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/all.min.css">
-    <link rel="stylesheet" href="/sanpham/css/style.css">
+    <link rel="stylesheet" href="/giohang/css/style.css">
     <script src="/public/js/jquery.min.js"></script>
     
-    <title>Sản phẩm</title>
+    <title>Giỏ hàng</title>
 </head>
 <body>
     <!-- Thanh menu -->
     <?php include_once __SITE_PATH . '/layouts/header.php'; ?>
 
+
     <!--Danh sách sản phẩm -->
     <div class="sanpham_gr">
-        <input type="hidden" id="TrangHienTai" value="1">
         <div class="grid wide" id="danhsach"></div>
     </div>
 
     <!-- Footer -->
     <?php include_once __SITE_PATH . '/layouts/footer.php'; ?>
     <script>
-        function DanhSach(hangsanxuat=''){
+        function DanhSach(){
             $.ajax({
                 type: 'POST',
-                url: '/sanpham/san_pham_danh_sach.php',
-                data: {
-                    TimKiem: $('#TimKiem').val(),
-                    hangsanxuat: hangsanxuat,
-                    tranghientai: $('#TrangHienTai').val()
-                },
+                url: '/giohang/gio_hang_danh_sach.php',
+                data: {},
                 dataType: 'html',
                 success: function(kq){
                     $('#danhsach').html(kq)

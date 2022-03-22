@@ -32,7 +32,7 @@
 <div class="row">
 <?php
     $Page =$_POST["tranghientai"];
-    $Limit = 12;
+    $Limit = 8;
     $Start = $Limit * ($Page - 1);
     $NumPage = 4;
     $danhsach = $home->getDSData($search, $Start, $Limit);
@@ -42,16 +42,16 @@
         $giacu = $danhsach[$i]['dien_thoai_gia_cu'];
         $giahientai = $danhsach[$i]['dien_thoai_gia_hien_tai'];
     ?>
-    <div class="col l-3 m-6 c-12">
+    <div class="col l-3 m-6 c-12 mtop">
         <div class="content">
-            <img class="hinhanh" src="/public/img/products/<?php echo $hinhanh; ?>" alt="" width="100%">
-            <div class="name"><?php echo $tendienthoai; ?></div>
+            <img id="hinhanh_<?php echo $danhsach[$i]['dien_thoai_id']; ?>" class="hinhanh" src="/public/img/products/<?php echo $hinhanh; ?>" alt="" width="100%">
+            <div id="tendienthoai_<?php echo $danhsach[$i]['dien_thoai_id']; ?>" class="name"><?php echo $tendienthoai; ?></div>
             <div class="price">
                 <span class="price_old"><?php echo number_format($giacu); ?> đ</span>
-                <span class="price_curent"><?php echo number_format($giahientai); ?> đ</span>
+                <span val="<?php echo $danhsach[$i]['dien_thoai_gia_hien_tai']; ?>" id="giaban_<?php echo $danhsach[$i]['dien_thoai_id']; ?>" class="price_curent"><?php echo number_format($giahientai); ?> đ</span>
             </div>
             <div class="hanhdong">
-                <a href="#" class="mua">Mua</a>
+                <a onclick="ThemVaoGioHang('<?php echo $danhsach[$i]['dien_thoai_id']; ?>')" href="#" class="mua">Mua</a>
                 <a href="#" class="xem">Xem</a>
             </div>
         </div>

@@ -5,9 +5,6 @@
 .mtop{
     margin-bottom: 10px;
 }
-.hinhanh{
-
-}
 .name{
     font-size: 16px;
     padding: 5px 15px;
@@ -91,4 +88,82 @@
     color:red;
   }
 
-  
+  /* Footer */
+  .footer{
+    background-color: #383838;
+    padding: 25px 0px 0px 0px;
+  }
+  .footer_content{
+
+  }
+  .gioithieu{
+    color: #fff;
+    padding: 15px 0px 5px 0px;
+  }
+  .hotrokhachhang{
+    color: #fff;
+    padding: 15px 0px 5px 0px;
+  }
+  .lienhe{
+    color: #fff;
+    padding: 15px 0px 5px 0px;
+  }
+.footer .footer_content ul{
+    list-style: none;
+}
+.footer .footer_content ul li a:hover{
+      color: rgb(247, 144, 9);
+}
+.footer .footer_content ul a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    padding: 5px 0px;     
+}
+.logo_bocongthuong{
+    margin: 5px 0px;
+    width: 150px;
+}
+@media (max-width: 540px){
+    .footer_content{
+        padding: 0px 50px;
+    }  
+    .hotline_text{
+        text-align: center;
+    }
+    .banquyen{
+        padding: 0px 50px;
+    }
+    
+}
+.banquyen{
+    background-color: #824a1a;
+    position: relative;
+    margin-top: 60px;
+}
+.banquyen_title{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-align: right;
+    padding: 13px 0px;
+}
+.hotline{
+    position: absolute;
+    color: #fff;
+    background-color: #53ac19;
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 20px;
+    top: -52px;
+}
+.hotline_text{
+    color: #f0bc10;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+}
+.footer .footer_content ul li a .fa-solid{
+    font-size: 12px;
+}
