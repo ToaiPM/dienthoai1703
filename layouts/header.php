@@ -1,3 +1,4 @@
+<!-- Thanh menu PC, Tablet -->
 <div class="header">
     <div class="main_menu grid wide">
         <a href="/" class="home_gr">
@@ -38,6 +39,20 @@
         </div>
     </div>
 </div>
+
+<!-- Menu mobile -->
+<div class="mobile_menu">
+    <span class="bieutuong_bars"><i class="fa-solid fa-bars"></i></span>
+</div>
+<!-- Content mobile -->
+<div class="content_mobile">
+    <ul>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Tin tức</a></li>
+        <li><a href="#">Liên hệ</a></li>
+    </ul>
+</div>
 <!-- Modal đăng nhập -->
 <div class="modal_dangnhap">
     <div class="modal_dangnhap_content">
@@ -55,16 +70,48 @@
         </div>
     </div>
 </div>
+<!-- Thông báo thêm vào gio hàng -->
+<div class="modal_cus">
+    <div class="noidung">
+        <div class="noidung-header">
+            <span class="noidung-header_text">Thông báo</span>
+        </div>
+        <div class="noidung-body">
+            <span class="noidung-body_thongbao"><i class="fa-solid fa-circle-check"></i> Đã thêm vào giỏ hàng</span>
+            <button onclick="DongThongBao()" class="dongy">OK</button>
+        </div>
+    </div>
+</div>
 <script>
-        function getDangNhap(){
-            $('#tendangnhap').val('');
-            $('#matkhau').val('');
-            $('.modal_dangnhap').addClass('active_modal_dangnhap');
-        }
-        function DongFormDangNhap(){
-            $('.modal_dangnhap').removeClass('active_modal_dangnhap');
-        }
-        function postDangNhap(){
-            alert(4)
-        }
+    function ThongBaoTrangThai(){
+        var soluong = '<?php echo isset($_SESSION["soluong_tong"]) ? $_SESSION["soluong_tong"] : 0; ?>';
+        //var idnguoidung = '<?php echo isset($_SESSION["idnguoidung"]) ? $_SESSION["idnguoidung"] : 0; ?>';
+        // if(idnguoidung!=0){
+        //     $('#chuadangnhap').css('display','none');
+        //     $('#dadangnhap').css('display','block');
+        // }else{
+        //     $('#chuadangnhap').css('display','block');
+        //     $('#dadangnhap').css('display','none');
+        // }
+        $('#thongbao_giohang').html(soluong)
+    }
+    ThongBaoTrangThai();
+
+    function getDangNhap(){
+        $('#tendangnhap').val('');
+        $('#matkhau').val('');
+        $('.modal_dangnhap').addClass('active_modal_dangnhap');
+    }
+
+    function DongFormDangNhap(){
+        $('.modal_dangnhap').removeClass('active_modal_dangnhap');
+    }
+
+    function postDangNhap(){
+        alert(4)
+    }
+
+    function DongThongBao(){
+        $('.modal_cus').css('display','none');
+    }
 </script>

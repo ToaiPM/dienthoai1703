@@ -42,6 +42,28 @@
             });
         }
         DanhSach();
+
+        function ThemVaoGioHang(idSanPham){
+            $.ajax({
+                type: 'POST',
+                url: '/home/home_them_vao_gio_hang.php',
+                data: {
+                    idSanPham: idSanPham,
+                    hinhanh: $('#hinhanh_'+idSanPham).attr('src'),
+                    tendienthoai: $('#tendienthoai_'+idSanPham).html(),
+                    giaban: $('#giaban_'+idSanPham).attr('val')
+                },
+                dataType: 'json',
+                success: function(response){
+                    if(response.status ==200){
+                        $('#thongbao_giohang').html(response.soluong);
+                        $('.modal_cus').css('display','flex');
+                    }else{
+                        alert('Không thể thêm');
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -22,7 +22,7 @@
     if($tongsodong == 0){
 ?>
 <div class="container">
-    <div class="thongtingiohang mt-4">Giỏ hàng rổng</div>
+    <div class="thongtingiohang canhbaorong"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;Giỏ hàng rổng</div>
 </div>
 <?php }else{ ?>
 <div class="container">
@@ -30,10 +30,10 @@
         <div class="thongtingiohang mt-4">Giỏ hàng của bạn</div>
         <thead>
             <tr>
-                <th scope="col">Thông tin sản phẩm</th>
-                <th scope="col">Đơn giá</th>
-                <th scope="col">Số lượng</th>
-                <th scope="col">Thành tiền</th>
+                <th style="text-align:left">Thông tin sản phẩm</th>
+                <th class="ancot_dongia dongia" style="text-align:left;color:#333">Đơn giá</th>
+                <th style="text-align:left">Số lượng</th>
+                <th style="text-align:left">Thành tiền</th>
             </tr>
         </thead>
         <tbody>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                 </td>
-                <td>
+                <td class="ancot_dongia">
                     <div class="dongia">
                         <h6><?php echo number_format($giaban). ' đ'; ?></h6>
                     </div>
@@ -78,7 +78,9 @@
             </tr>
             <?php } ?>
             <tr>
-                <td colspan="3" style="text-align:right">Tổng tiền:</td>
+                <td colspan="1"></td>
+                <td class="ancot_dongia" colspan="1"></td>
+                <td colspan="1" style="text-align:right">Tổng tiền:</td>
                 <td class="text text-danger"><?php echo number_format($tongthanhtien). 'đ'; ?></td>
             </tr>
             

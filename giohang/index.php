@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/public/css/grid.css">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/all.min.css">
+
     <link rel="stylesheet" href="/giohang/css/style.css">
     <script src="/public/js/jquery.min.js"></script>
     
@@ -38,6 +39,47 @@
             });
         }
         DanhSach();
+
+        function XoaTrongGiohang(idSanPham){
+            $.ajax({
+                type:'POST',
+                url: '/giohang/gio_hang_xoa.php',
+                data: {
+                    idSanPham: idSanPham
+                },
+                dataType: 'json',
+                success: function(res){
+                    if(res.status==200){
+                        $('#thongbao_giohang').html(res.soluong_tong)
+                        DanhSach();
+                        alert('Xóa thành công');
+                    }else{
+                        alert('Không thể xóa');
+                    }
+                }
+            });
+        }
+
+        function CapNhatGioHang(action,idSanPham){
+            $.ajax({
+                type: 'POST',
+                url: '/giohang/gio_hang_cap_nhat.php',
+                data: {
+                    action: action,
+                    idSanPham: idSanPham,
+                    sl: $('#soluong_'+idSanPham).val()
+                },
+                dataType: 'json',
+                success: function(res){
+                    if(res.status==200){
+                        $('#thongbao_giohang').html(res.soluong_tong)
+                        DanhSach();
+                    }else{
+                        alert('Không thể cập nhật');
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
