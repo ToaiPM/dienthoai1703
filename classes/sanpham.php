@@ -1,5 +1,5 @@
 <?php
-    class home{
+    class sanpham{
         public function getDSData($timkiem, $Start=null, $Limit=null){
             $sql = "SELECT
                 dt.dien_thoai_id,
@@ -12,9 +12,7 @@
                 dien_thoai dt
             LEFT JOIN hang_san_xuat hsx ON dt.hang_san_xuat_id = hsx.hang_san_xuat_id 
             WHERE dt.dien_thoai_ten LIKE '%$timkiem%' OR hsx.hang_san_xuat_ten LIKE '%$timkiem%'";
-                $sql .= "ORDER BY dt.dien_thoai_luot_xem DESC ";
                 $sql .= " LIMIT " . $Start . ", " . $Limit;
-                
             $service = new dataservice();
             return $service->ExecuteQuery($sql);
         }

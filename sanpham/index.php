@@ -11,14 +11,11 @@
     <link rel="stylesheet" href="/home/css/style.css">
     <script src="/public/js/jquery.min.js"></script>
     
-    <title>Trang home</title>
+    <title>Sản phẩm</title>
 </head>
 <body>
     <!-- Thanh menu -->
     <?php include_once __SITE_PATH . '/layouts/header.php'; ?>
-
-    <!--banner-->
-    <?php include_once __SITE_PATH . '/layouts/banner.php'; ?>
 
     <!--Danh sách sản phẩm -->
     <div class="sanpham_gr">
@@ -32,7 +29,7 @@
         function DanhSach(hangsanxuat=''){
             $.ajax({
                 type: 'POST',
-                url: '/home/home_danh_sach.php',
+                url: '/sanpham/san_pham_danh_sach.php',
                 data: {
                     TimKiem: $('#TimKiem').val(),
                     hangsanxuat: hangsanxuat,

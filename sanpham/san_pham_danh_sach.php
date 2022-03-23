@@ -21,7 +21,7 @@
     }else{
         $search = '';
     }
-    $home = new home();
+    $home = new sanpham();
     $tongsodong = $home->countTotal($search);
 
 ?>

@@ -8,12 +8,13 @@
                 <a href="#">Giới thiệu</a>
             </li>
             <li>
-                <a href="#">Danh mục &nbsp;<i class="fa-solid fa-caret-down"></i></a>
+                <a href="#">Sản phẩm &nbsp;<i class="fa-solid fa-caret-down"></i></a>
                 <ul class="sub_menu">
-                    <li><a href="#">iPhone</a></li>
-                    <li><a href="#">Samsung</a></li>
-                    <li><a href="#">OPPO</a></li>
-                    <li><a href="#">Xiaomi</a></li>
+                    <li><a href="/index.php?action=sanpham/index">Tất cả</a></li>
+                    <li><a onclick="DanhSach('iPhone')" href="#">iPhone</a></li>
+                    <li><a onclick="DanhSach('Samsung')" href="#">Samsung</a></li>
+                    <li><a onclick="DanhSach('OPPO')" href="#">OPPO</a></li>
+                    <li><a onclick="DanhSach('Xiaomi')" href="#">Xiaomi</a></li>
                 </ul>
             </li>
             <li>
