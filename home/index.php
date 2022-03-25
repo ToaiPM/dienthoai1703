@@ -30,11 +30,21 @@
     <?php include_once __SITE_PATH . '/layouts/footer.php'; ?>
     <script>
         function DanhSach(hangsanxuat=''){
+            var TimKiem = '';
+            var timkiem_pc = $('#TimKiem').val();
+            var timkiem_mb = $('#TimKiem_mobile').val();
+            if(timkiem_pc!=''){
+                TimKiem = timkiem_pc;
+            }else if(timkiem_mb!=''){
+                TimKiem = timkiem_mb;
+            }else{
+                TimKiem = '';
+            }
             $.ajax({
                 type: 'POST',
                 url: '/home/home_danh_sach.php',
                 data: {
-                    TimKiem: $('#TimKiem').val(),
+                    TimKiem: TimKiem,
                     hangsanxuat: hangsanxuat,
                     tranghientai: $('#TrangHienTai').val()
                 },
@@ -60,6 +70,7 @@
                 success: function(response){
                     if(response.status ==200){
                         $('#thongbao_giohang').html(response.soluong);
+                        $('#thongbao_giohang_mobile').html(response.soluong);
                         $('.modal_cus').css('display','flex');
                     }else{
                         alert('Không thể thêm');

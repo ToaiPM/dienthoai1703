@@ -26,7 +26,7 @@
                 $_SESSION['listGioHang'][$key]['soluong']=$sl;
             }
             $soluong = $_SESSION['listGioHang'][$key]['soluong'];
-            if($soluong==0){
+            if($soluong<=0){
                 array_splice($_SESSION['listGioHang'],$key,1);
             }
             break;

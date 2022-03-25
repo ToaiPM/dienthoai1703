@@ -174,15 +174,19 @@ html,body{
     display: none;
     align-items: center;
     justify-content: center;
+    animation: fadeIn linear 0.1s;
 }
 .active_modal_dangnhap{
     display: flex;
+    z-index: 20;
 }
 .modal_dangnhap_content{
     background-color: #fff;
     overflow: hidden;
     border-radius: 10px;
     width: 380px;
+    z-index: 10;
+
 }
 .modal_dangnhap_header{
     padding: 8px 12px;
@@ -207,7 +211,7 @@ html,body{
 .modal_dangnhap_text{
     width: 100%;
     margin: 6px 0px;
-    padding: 3px 5px;
+    padding: 5px 5px;
     font-size: 14px;
 }
 .modal_dangnhap_footer{
@@ -369,24 +373,161 @@ html,body{
 .content_mobile{
     position: fixed;
     z-index: 10;
-    background-color: #679ee6;
+    background-color: #818992;
+    box-shadow: 0px 1px 2px #333;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 250px;
+    width: 350px;
+    transform: translateX(-100%);
+    opacity: 1;
+    transition: transform linear 0.2s;
+}
+.hienthi_content_mobile{
     transform: translateX(0%);
 }
+.content_mobile .trangchu_gr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0px;
+}
+.content_mobile .trangchu_gr .trangchu_link{
+    display: block;
+    padding: 10px 10px;   
+}
+.content_mobile .trangchu_gr .trangchu_link .trangchu_img{
+    width: 40px;
+    height: 40px;    
+}
+.content_mobile .trangchu_gr .closed{
+    display: flex;
+    font-size: 35px;
+    color: #f00;
+    height: 50px;
+    width: 58px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 .content_mobile > ul{
-    list-style: none;
+    margin-top: 10px;
 }
 .content_mobile > ul >li{
-
+    list-style: none;
 }
 .content_mobile > ul >li > a{
     text-decoration: none;
     color: #fff;
     display: block;
-    padding: 8px 8px;
+    padding: 16px 8px;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+.hien_overlay{
+    display: block;
+}
+.content_mobile .timkiem_gr{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0px;
+    padding: 0px 18px 0px 6px;
+}
+
+.content_mobile .timkiem_gr .timkiem_txt{
+    height: 30px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-right: 0px;
+    padding: 10px;
+    border: none;
+    color: #747474;
+}
+.content_mobile .timkiem_gr .timkiem_txt:focus{
+    outline: none;
+}
+.content_mobile .timkiem_gr .timkiem_btn{
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.content_mobile .giohang_gr{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 5px;
+}
+.content_mobile .giohang_gr .giohang_sl{
+    position: absolute;
+    top: -2px;
+    right: -16px;
+    font-size: 13px;
+    background-color: #0e8aed;
+    width: 20px;
+    height: 20px;
+    display: block;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 12px;
+}
+.content_mobile .nguoidung_gr{
+    display: flex;
+    align-items: center;
+}
+.content_mobile .nguoidung_gr .nguoidung_dn{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+    padding-left: 10px;
+}
+.content_mobile .nguoidung_gr .nguoidung_dn:hover{
+    background-color: #8b8b8b;   
+}
+.content_mobile .nguoidung_gr .nguoidung_dx{
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+    padding-left: 10px;
+}
+.content_mobile .nguoidung_gr .nguoidung_dx:hover{
+    background-color: #8b8b8b;   
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.4;
+    }
 }
 @media (max-width: 540px){
     .footer_content{

@@ -27,11 +27,21 @@
     <?php include_once __SITE_PATH . '/layouts/footer.php'; ?>
     <script>
         function DanhSach(hangsanxuat=''){
+            var TimKiem = '';
+            var timkiem_pc = $('#TimKiem').val();
+            var timkiem_mb = $('#TimKiem_mobile').val();
+            if(timkiem_pc!=''){
+                TimKiem = timkiem_pc;
+            }else if(timkiem_mb!=''){
+                TimKiem = timkiem_mb;
+            }else{
+                TimKiem = '';
+            }
             $.ajax({
                 type: 'POST',
                 url: '/sanpham/san_pham_danh_sach.php',
                 data: {
-                    TimKiem: $('#TimKiem').val(),
+                    TimKiem: TimKiem,
                     hangsanxuat: hangsanxuat,
                     tranghientai: $('#TrangHienTai').val()
                 },

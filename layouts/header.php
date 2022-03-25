@@ -35,24 +35,44 @@
         </a>
         <div class="nguoidung_gr">
             <span onclick="getDangNhap()" class="nguoidung_dn">Đăng nhập</span>
-            <span class="nguoidung_dx">Đăng xuất</span>
+            <span onclick="DangXuat()" class="nguoidung_dx">Đăng xuất</span>
         </div>
     </div>
 </div>
 
 <!-- Menu mobile -->
 <div class="mobile_menu">
-    <span class="bieutuong_bars"><i class="fa-solid fa-bars"></i></span>
+    <span onclick="BatMenuMobile()" class="bieutuong_bars"><i class="fa-solid fa-bars"></i></span>
 </div>
 <!-- Content mobile -->
 <div class="content_mobile">
+    <div class="trangchu_gr">
+        <a href="/" class="trangchu_link">
+            <img src="/public/img/icon/home_icon.png" width="20px" class="trangchu_img">
+        </a>
+        <span onclick="TatMenuMobile()" class="closed"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+    <hr>
     <ul>
         <li><a href="#">Giới thiệu</a></li>
         <li><a href="#">Sản phẩm</a></li>
         <li><a href="#">Tin tức</a></li>
         <li><a href="#">Liên hệ</a></li>
     </ul>
+    <div class="timkiem_gr">
+        <input type="text" id="TimKiem_mobile" class="timkiem_txt" placeholder="Bạn cần tìm sản phẩm nào ...">
+        <button onclick="DanhSach()" class="timkiem_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <a href="/index.php?action=giohang/index" class="giohang_gr">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="thongbao_giohang_mobile" class="giohang_sl">0</span>
+    </a>
+    <div class="nguoidung_gr">
+        <span onclick="getDangNhap()" class="nguoidung_dn">Đăng nhập</span>
+        <span class="nguoidung_dx">Đăng xuất</span>
+    </div>
 </div>
+<div onclick="TatMenuMobile()" class="overlay"></div>
 <!-- Modal đăng nhập -->
 <div class="modal_dangnhap">
     <div class="modal_dangnhap_content">
@@ -85,15 +105,16 @@
 <script>
     function ThongBaoTrangThai(){
         var soluong = '<?php echo isset($_SESSION["soluong_tong"]) ? $_SESSION["soluong_tong"] : 0; ?>';
-        //var idnguoidung = '<?php echo isset($_SESSION["idnguoidung"]) ? $_SESSION["idnguoidung"] : 0; ?>';
-        // if(idnguoidung!=0){
-        //     $('#chuadangnhap').css('display','none');
-        //     $('#dadangnhap').css('display','block');
-        // }else{
-        //     $('#chuadangnhap').css('display','block');
-        //     $('#dadangnhap').css('display','none');
-        // }
+        var idnguoidung = '<?php echo isset($_SESSION["idnguoidung"]) ? $_SESSION["idnguoidung"] : 0; ?>';
+        if(idnguoidung!=0){
+            $('.nguoidung_dn').css('display','none');
+            $('.nguoidung_dx').css('display','block');
+        }else{
+            $('.nguoidung_dn').css('display','block');
+            $('.nguoidung_dx').css('display','none');
+        }
         $('#thongbao_giohang').html(soluong)
+        $('#thongbao_giohang_mobile').html(soluong)
     }
     ThongBaoTrangThai();
 
@@ -108,10 +129,52 @@
     }
 
     function postDangNhap(){
-        alert(4)
+        $.ajax({
+            type: 'POST',
+            url: '/quanly/nguoidung/nguoi_dung_dang_nhap.php',
+            data: {
+                tendangnhap: $('#tendangnhap').val(),
+                matkhau: $('#matkhau').val()
+            },
+            dataType: 'json',
+            success: function(res){
+                if(res.status == 200){
+                    $('.nguoidung_dn').css('display','none');
+                    $('.nguoidung_dx').css('display','block');
+                    $('.modal_dangnhap').css('display','none');
+                    window.location="/index.php?action=quanly/index";
+                }else{
+                    alert('Đăng nhập thất bại');
+                }
+            }
+        });
     }
 
+    function DangXuat(){
+        $.ajax({
+            type: 'POST',
+            url: '/quanly/nguoidung/nguoi_dung_dang_xuat.php',
+            data: {},
+            dataType: 'json',
+            success: function(res){
+                if(res.status = 200){
+                    $('.nguoidung_dn').css('display','block');
+                    $('.nguoidung_dx').css('display','none');
+                    window.location="/index.php";
+                }
+            }
+        })
+    }
     function DongThongBao(){
         $('.modal_cus').css('display','none');
+    }
+
+    function BatMenuMobile(){
+        $('.content_mobile').addClass('hienthi_content_mobile');
+        $('.overlay').addClass('hien_overlay');
+    }
+    function TatMenuMobile(){
+        $('.content_mobile').removeClass('hienthi_content_mobile');
+        $('.overlay').removeClass('hien_overlay');
     }
 </script>
