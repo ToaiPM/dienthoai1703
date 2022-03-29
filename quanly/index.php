@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/public/css/all.min.css">
     <script src="/public/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-
     <link rel="stylesheet" href="/quanly/css/jquery.datetimepicker.css">
     <script src="/quanly/js/jquery.datetimepicker.js"></script>
     <title>Quản lý</title>
