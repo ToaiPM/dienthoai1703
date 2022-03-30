@@ -18,92 +18,12 @@
       header("Location: /");
   }
 ?>
-<div class="navigation">
-  <ul>
-    <li>
-      <a href="#">
-        <span class="icon"><i class="fa-solid fa-house"></i></span>
-        <span class="title">Cửa hàng</span>
-      </a>
-      <input type="checkbox" name="codinh" id="codinh" class="codinh" title="Cố định">
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-user"></i></span>
-        <span class="title">Cấu hình</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-comment"></i></span>
-        <span class="title">Tin nhắn</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-product-hunt"></i></span>
-        <span class="title">Sản phẩm</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
-        <span class="title">Lịch</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
-        <span class="title">Trợ giúp</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-gear"></i></span>
-        <span class="title">Cài đặt</span>
-      </a>
-    </li>
-    <li>
-      <a href="">
-        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-        <span class="title">Đăng xuất</span>
-      </a>
-    </li>
-  </ul>
-</div>
+<?php include_once __SITE_PATH . '/quanly/layouts/navigation.php';  ?>
+<?php include_once __SITE_PATH . '/quanly/layouts/content_header.php';  ?>
 
-<div class="content">
-  <!-- start menu -->
-  <div class="menu_main">
-    <input type="text" class="txt_timkiem">
-    <button class="btn_timkiem"><i class="fa-solid fa-magnifying-glass"></i></button>
-    <div class="nguoidung">
-      <a href="#" class="dangxuat" title="Đăng xuất">
-        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-      </a>
-    </div>
-  </div>
-  <div class="tieude">Thống kê đơn hàng doanh số</div>
-  <div class="boloc">
-    <label for="" class="nhaplieu_title">Từ ngày&nbsp;</label>
-    <input type="text" id="tungay_text" class="nhaplieu">
-    <label for="" class="nhaplieu_title">&nbsp;&nbsp;Đến ngày&nbsp;</label>
-    <input type="text" id="denngay_text" class="nhaplieu">
-    <button class="btn_loc">Lấy dữ liệu</button>
-  </div>
-  <!-- End menu -->
+<?php include_once __SITE_PATH . '/quanly/layouts/dothi.php';  ?>
 
-  <div class="bieudo">
-    <div class="bieudo__item" style="--percent: 10%">10%</div>
-    <div class="bieudo__item" style="--percent: 20%">20%</div>
-    <div class="bieudo__item" style="--percent: 45%">45%</div>
-    <div class="bieudo__item" style="--percent: 35%">35%</div>
-    <div class="bieudo__item" style="--percent: 17%">17%</div>
-    <div class="bieudo__item" style="--percent: 90%">90%</div>
-    <div class="bieudo__item" style="--percent: 70%">70%</div>
-  </div>
-  <canvas id="dothi_line"></canvas>
-</div>
+<?php include_once __SITE_PATH . '/quanly/layouts/content_footer.php';  ?>
     <script>
     $('#codinh').click(function(){
         if(this.checked == true){
@@ -122,8 +42,8 @@
     $('#denngay_text').val('<?php echo date('d/m/Y'); ?>');
 
     /** Đồ thị */
-    var trucx = ['Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7','Chủ nhật'];
-    var trucy = [1,4.5,6,5,7,2.3,10];
+    var trucx = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'];
+    var trucy = [1,4.5,6,5,7,2.3,10,1.1,2.3,5.6,9,9,7,8,5.2,3.3,0,5,0,7,8,10,6,6.5,7.5,9.1,7.7,7,9,10];
     var dt = document.getElementById('dothi_line').getContext('2d');
     var duong = new Chart(dt,{
         type: 'line',
@@ -134,7 +54,22 @@
             data: trucy
         }]
         }
-    })
+    });
+
+    /** Đăng xuất */
+    function DangXuat(){
+        $.ajax({
+            type: 'POST',
+            url: '/quanly/nguoidung/nguoi_dung_dang_xuat.php',
+            data: {},
+            dataType: 'json',
+            success: function(res){
+                if(res.status = 200){
+                    window.location="/index.php";
+                }
+            }
+        })
+    }
     </script>
 </body>
 </html>

@@ -50,9 +50,11 @@ html,body{
     line-height: 60px;
     text-align: center;
 }
+.navigation ul li a .icon .fa-brands,
 .navigation ul li a .icon .fa-solid{
     font-size: 24px;
 }
+
 .navigation ul li a .title{
     position: relative;
     display: block;
@@ -113,7 +115,7 @@ html,body{
 }
 .menu_main .nguoidung .dangxuat{
     color: white;
-    font-size: 25px;   
+    font-size: 20px;   
 }
 .menu_main .nguoidung .dangxuat .icon{
     
@@ -144,26 +146,9 @@ html,body{
     margin-left: 4px !important;
     width: 100px;
 }
-
-.bieudo {
-    margin: 36px auto 0 auto;
-    padding: 32px 0;
-    height: 320px;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-around;
+#dothi_line{
+    margin: 20px 0px;
 }
-
-.bieudo__item {
-    align-self: flex-end;
-    width: 60px;
-    color: #fff;
-    text-align: center;
-    height: var(--percent);
-    background-color: #EF5122;
-    animation: growth ease-in 0.3s;
-}
-
 @keyframes growth {
     from {
         opacity: 0;
