@@ -141,10 +141,14 @@ html,body{
     outline-color: #78a4e0;
     width: 120px;
     text-align: center;
+    padding: 3px 0px;
 }
 .btn_loc{
     margin-left: 4px !important;
     width: 100px;
+    padding: 3px 0px;
+    background-color: #090808;
+    color: #fff;
 }
 #dothi_line{
     margin: 20px 0px;
