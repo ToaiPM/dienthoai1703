@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule "index.html"                        "index.php"
+RewriteRule "gio-hang"                          "index.php?action=giohang/index"
+RewriteRule "quan-ly"                           "index.php?action=quanly/index"

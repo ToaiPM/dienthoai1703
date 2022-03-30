@@ -29,7 +29,7 @@
             <input type="text" id="TimKiem" class="timkiem_txt" placeholder="Bạn cần tìm sản phẩm nào ...">
             <button onclick="DanhSach()" class="timkiem_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        <a href="/index.php?action=giohang/index" class="giohang_gr">
+        <a href="/gio-hang" class="giohang_gr">
             <i class="fa-solid fa-cart-shopping"></i>
             <span id="thongbao_giohang" class="giohang_sl">0</span>
         </a>
@@ -142,7 +142,7 @@
                     $('.nguoidung_dn').css('display','none');
                     $('.nguoidung_dx').css('display','block');
                     $('.modal_dangnhap').css('display','none');
-                    window.location="/index.php?action=quanly/index";
+                    window.location="/quan-ly";
                 }else{
                     alert('Đăng nhập thất bại');
                 }
