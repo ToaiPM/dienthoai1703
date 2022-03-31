@@ -65,7 +65,7 @@
                 }
             });
         }
-        //DanhSach();
+        DanhSach();
     </script>
 </body>
 </html>

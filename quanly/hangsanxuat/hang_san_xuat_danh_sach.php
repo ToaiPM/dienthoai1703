@@ -24,5 +24,36 @@
     }
     $h = new hangsanxuat();
     $tongsodong = $h->countTotal($search, $search_ma, $search_ten);
-    //print($tongsodong);die;
+    $ds = $h->DanhSach($search, $search_ma, $search_ten);
+    
 ?>
+<table>
+    <tr>
+        <th width="5%">STT</th>
+        <th>Mã</th>
+        <th>Tên</th>
+        <th>Sửa</th>
+        <th>Chọn</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>A001</td>
+        <td>Samsung</td>
+        <td>Sửa</td>
+        <td>Chọn</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>A001</td>
+        <td>Samsung</td>
+        <td>Sửa</td>
+        <td>Chọn</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>A001</td>
+        <td>Samsung</td>
+        <td>Sửa</td>
+        <td>Chọn</td>
+    </tr>
+</table>

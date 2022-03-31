@@ -1,9 +1,7 @@
-.hangsanxuat_gr{
-
-}
+/* Bộ lọc */
 .hangsanxuat_gr .hangsanxuat_title{
     text-align: center;
-    padding: 9px 0px;
+    padding: 15px 0px;
     font-weight: 600;
     margin: 21px 0px 0px 0px;
     background-color: #09b1b9;
@@ -21,9 +19,7 @@
 .hangsanxuat_gr .boloc_content table{
     width: 100%;
 }
-.hangsanxuat_gr .boloc_content table tr{
-    
-}
+
 .hangsanxuat_gr .boloc_content table tr td:first-child{
    width: 22%; 
    font-size: 15px;
@@ -38,4 +34,31 @@
     width: 80px;
     height: 25px;
     margin-top: 5px;
+}
+/* Danh sách hãng sản xuất */
+.hangsanxuat_gr #danhsach{
+    margin: 20px 0px 0px 0px;
+}
+.hangsanxuat_gr #danhsach table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;   
+}
+.hangsanxuat_gr #danhsach th,
+.hangsanxuat_gr #danhsach table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.hangsanxuat_gr #danhsach tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+.hangsanxuat_gr #danhsach tr:hover{
+    background-color: #ddd;
+}
+.hangsanxuat_gr #danhsach th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
 }
