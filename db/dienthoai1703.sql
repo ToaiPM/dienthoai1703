@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 100419
+ Source Server Version : 100408
  Source Host           : localhost:3306
  Source Schema         : dienthoai1703
 
  Target Server Type    : MySQL
- Target Server Version : 100419
+ Target Server Version : 100408
  File Encoding         : 65001
 
- Date: 22/03/2022 13:50:12
+ Date: 30/03/2022 21:05:09
 */
 
 SET NAMES utf8mb4;
@@ -77,5 +77,26 @@ INSERT INTO `hang_san_xuat` VALUES (2, NULL, 'Samsung', NULL);
 INSERT INTO `hang_san_xuat` VALUES (3, NULL, 'OPPO', NULL);
 INSERT INTO `hang_san_xuat` VALUES (4, NULL, 'SONY', NULL);
 INSERT INTO `hang_san_xuat` VALUES (5, NULL, 'Xiaomi', NULL);
+
+-- ----------------------------
+-- Table structure for nguoi_dung
+-- ----------------------------
+DROP TABLE IF EXISTS `nguoi_dung`;
+CREATE TABLE `nguoi_dung`  (
+  `nguoi_dung_id` int NOT NULL AUTO_INCREMENT,
+  `nguoi_dung_ma` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `nguoi_dung_ten` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `nguoi_dung_ten_dang_nhap` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `nguoi_dung_mat_khau` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `nguoi_dung_quyen_han` int NULL DEFAULT 0 COMMENT '1 qtv, 0 nv',
+  `nguoi_dung_email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `nguoi_dung_so_dien_thoai` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT '',
+  PRIMARY KEY (`nguoi_dung_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of nguoi_dung
+-- ----------------------------
+INSERT INTO `nguoi_dung` VALUES (1, 'nttoai', 'Nguyễn Tấn Toại', 'nttoai', 'e10adc3949ba59abbe56e057f20f883e', 1, 'nttoai89@gmail.com', '0985956340');
 
 SET FOREIGN_KEY_CHECKS = 1;
