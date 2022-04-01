@@ -1,0 +1,41 @@
+.hangsanxuat_gr{
+
+}
+.hangsanxuat_gr .hangsanxuat_title{
+    text-align: center;
+    padding: 9px 0px;
+    font-weight: 600;
+    margin: 21px 0px 0px 0px;
+    background-color: #09b1b9;
+    color: #fff;
+}
+.hangsanxuat_gr .boloc_content{
+    width: 330px;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 15px;
+    padding: 10px 8px 10px 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #0db8ca;
+}
+.hangsanxuat_gr .boloc_content table{
+    width: 100%;
+}
+.hangsanxuat_gr .boloc_content table tr{
+    
+}
+.hangsanxuat_gr .boloc_content table tr td:first-child{
+   width: 22%; 
+   font-size: 15px;
+}
+.hangsanxuat_gr .boloc_content table tr td .nhaptukhoa{
+    width: 100%;
+    padding: 3px 3px; 
+    margin: 2px 0px;
+}
+.hangsanxuat_gr .boloc_content table tr td .btn_submit{
+    float: right;
+    width: 80px;
+    height: 25px;
+    margin-top: 5px;
+}
