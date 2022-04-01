@@ -56,9 +56,123 @@
     background-color: #ddd;
 }
 .hangsanxuat_gr #danhsach th{
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
     background-color: #04AA6D;
     color: white;
+}
+
+/* Định dạng nút phân trang */
+.PhanTrang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ClickPage{
+    padding: 0 4px;
+  }
+  .SoTrang{
+    padding: 0 4px;
+  }
+  .CurrentPage{
+    color:red;
+  }
+
+  /* Nhóm nút thêm xóa in Xuất Excel */
+.action_gr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px 8px 5px;
+}
+.action_gr .soluong_hangsanxuat{
+      
+}
+.action_gr .chucnang_gr{
+  
+}
+.action_gr .chucnang_gr .thaotac{
+    width: 90px;
+    padding: 4px 0px;
+    cursor: pointer;      
+}
+
+/* Form thêm hãng sản xuất */
+.modal_them{
+    position: fixed;
+    top: -300px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background: rgb(0, 0, 0,0.4);
+    animation: fadeIn linear 0.2s;
+}
+.modal_them .content_them{
+    background-color: #fff;
+    box-shadow: 1px 1px 2px #8a8c8c;
+    overflow: hidden;
+    border-radius: 8px;   
+}
+.modal_them .content_them .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0549ca;
+    padding: 6px 6px;
+    width: 350px;   
+}
+.modal_them .content_them .header .header_title{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;    
+}
+.modal_them .content_them .header .header_icon{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;    
+}
+.modal_them .content_them .body{
+    margin-top: 10px;   
+}
+.modal_them .content_them .body .info_gr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 12px;    
+}
+.modal_them .content_them .body .info_gr .info_label{
+    font-size: 16px;   
+}
+.modal_them .content_them .body .info_gr .info_text{
+    width: 76%;
+    padding: 2px 3px;    
+}
+.modal_them .content_them .body .info_gr_btn{
+    text-align: center;
+    margin: 10px 0px 16px 0px;
+}
+.modal_them .content_them .body .info_gr_btn .btn_them{
+    width: 72px;
+    padding: 3px 0px;   
+}
+.modal_them .content_them .body .info_gr_btn .btn_huy{
+    width: 72px;
+    padding: 3px 0px;   
+}
+.active_them{
+    display: flex;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.4;
+    }
 }

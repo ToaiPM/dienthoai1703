@@ -30,14 +30,14 @@
                 $sql = "SELECT h.hang_san_xuat_id, h.hang_san_xuat_ma, h.hang_san_xuat_ten, h.hang_san_xuat_ghi_chu 
                 FROM hang_san_xuat h 
                 WHERE h.hang_san_xuat_ma LIKE '%$search%' OR h.hang_san_xuat_ten LIKE '%$search%' ";
-                //$sql .= " LIMIT " . $Start . ", " . $Limit;
+                $sql .= " LIMIT " . $Start . ", " . $Limit;
                 $service = new dataservice();
                 return $service->ExecuteQuery($sql);
             }else{
                 $sql = "SELECT h.hang_san_xuat_id, h.hang_san_xuat_ma, h.hang_san_xuat_ten, h.hang_san_xuat_ghi_chu 
                 FROM hang_san_xuat h 
                 WHERE h.hang_san_xuat_ma LIKE '%$search_ma%' AND h.hang_san_xuat_ten LIKE '%$search_ten%' ";
-                //$sql .= " LIMIT " . $Start . ", " . $Limit;
+                $sql .= " LIMIT " . $Start . ", " . $Limit;
                 $service = new dataservice();
                 return $service->ExecuteQuery($sql);
             }

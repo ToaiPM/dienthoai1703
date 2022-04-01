@@ -44,8 +44,30 @@
         </div>
         <div id="danhsach"></div>
     </div>
-
     <?php include_once __SITE_PATH . '/quanly/layouts/content_footer.php';  ?>
+    <!-- form thêm mới -->
+    <div class="modal_them">
+        <div class="content_them">
+            <div class="header">
+                <span class="header_title">Thêm mới</span>
+                <span onclick="Huy()" class="header_icon">[X]</span>
+            </div>
+            <div class="body">
+                <div class="info_gr">
+                    <span class="info_label">Mã hãng</span>
+                    <input type="text" class="info_text">
+                </div>
+                <div class="info_gr">
+                    <span class="info_label">Tên hãng</span>
+                    <input type="text" class="info_text">
+                </div>
+                <div class="info_gr_btn">
+                    <button class="btn_them"><span class="icon"><i class="fa-solid fa-plus"></i></span> Thêm</button>
+                    <button onclick="Huy()" class="btn_huy"><span class="icon"><i class="fa-solid fa-xmark"></i></span> Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         function DanhSach(){
             var timkiem_header = $('#timkiem_header').val();
@@ -57,7 +79,8 @@
                 data: {
                     timkiem_header: timkiem_header,
                     boloc_content_ma: boloc_content_ma,
-                    boloc_content_ten: boloc_content_ten
+                    boloc_content_ten: boloc_content_ten,
+                    tranghientai: $('#TrangHienTai').val(),
                 },
                 dataType: 'html',
                 success: function(res){
@@ -66,6 +89,13 @@
             });
         }
         DanhSach();
+
+        function getThem(){
+            $('.modal_them').addClass('active_them');
+        }
+        function Huy(){
+            $('.modal_them').removeClass('active_them');
+        }
     </script>
 </body>
 </html>
