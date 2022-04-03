@@ -30,7 +30,7 @@
     <p class="soluong_hangsanxuat">Có (<?php echo $tongsodong; ?>) hãng sản xuất</p>
     <div class="chucnang_gr">
         <button onclick="getThem()" class="thaotac"><span class="icon"><i class="fa-solid fa-plus"></i></span> Thêm</button>
-        <button class="thaotac"><span class="icon"><i class="fa-solid fa-trash-can"></i></span> Xóa</button>
+        <button onclick="Xoa()" class="thaotac"><span class="icon"><i class="fa-solid fa-trash-can"></i></span> Xóa</button>
         <button class="thaotac"><span class="icon"><i class="fa-solid fa-print"></i></span> In</button>
         <button class="thaotac"><span class="icon"><i class="fa-solid fa-file-excel"></i></span> Xuất Excel</button>
     </div>
@@ -41,7 +41,10 @@
         <th>Mã</th>
         <th>Tên</th>
         <th width="7%">Sửa</th>
-        <th width="10%">Chọn</th>
+        <th width="10%">
+            <label for="checkall">Chọn</label>
+            <input type="checkbox" class="checkall" id="checkall" onchange="checkall()">
+        </th>
     </tr>
     <?php
     $Page =$_POST["tranghientai"];
@@ -60,8 +63,10 @@
         <td  style="text-align:center"><?php echo $i+1; ?></td>
         <td><?php echo $ma; ?></td>
         <td><?php echo $ten; ?></td>
-        <td style="text-align:center"><span class=""><i class="fa-solid fa-pencil"></i></span></td>
-        <td style="text-align:center"></td>
+        <td style="text-align:center"><span onclick="getSua('<?php echo $id; ?>')" class="capnhat_hsx" title="Sửa"><i class="fa-solid fa-pencil"></i></span></td>
+        <td style="text-align:center">
+            <input type="checkbox" class="mang" value="<?php echo $id; ?>">
+        </td>
     </tr>
     <?php } ?>
 </table>

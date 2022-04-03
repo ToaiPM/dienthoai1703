@@ -54,16 +54,17 @@
             </div>
             <div class="body">
                 <div class="info_gr">
+                    <input type="hidden" id="id_hsx">
                     <span class="info_label">Mã hãng</span>
-                    <input type="text" class="info_text">
+                    <input type="text" class="info_text" id="ma_hsx">
                 </div>
                 <div class="info_gr">
                     <span class="info_label">Tên hãng</span>
-                    <input type="text" class="info_text">
+                    <input type="text" class="info_text" id="ten_hsx">
                 </div>
                 <div class="info_gr_btn">
-                    <button class="btn_them"><span class="icon"><i class="fa-solid fa-plus"></i></span> Thêm</button>
-                    <button onclick="Huy()" class="btn_huy"><span class="icon"><i class="fa-solid fa-xmark"></i></span> Hủy</button>
+                    <button onclick="postThem()" class="btn_them">Thực hiện</button>
+                    <button onclick="Huy()" class="btn_huy">Hủy</button>
                 </div>
             </div>
         </div>
@@ -90,11 +91,128 @@
         }
         DanhSach();
 
+        function postThem(){
+            if($('#id_hsx').val()==''){
+                $.ajax({
+                    type: 'POST',
+                    url: '/quanly/hangsanxuat/hang_san_xuat_them.php',
+                    data: {
+                        ma: $('#ma_hsx').val(),
+                        ten: $('#ten_hsx').val()
+                    },
+                    dataType: 'json',
+                    success: function(res){
+                        if(res.status == 200){
+                            $('.modal_them').removeClass('active_them');
+                            DanhSach();
+                            alert('Thêm thành công');
+                        }else{
+                            alert('Không thể thêm');
+                        }
+                    }
+                });
+            }else{
+                $.ajax({
+                    type: 'POST',
+                    url: '/quanly/hangsanxuat/hang_san_xuat_cap_nhat.php',
+                    data: {
+                        id: $('#id_hsx').val(),
+                        ma: $('#ma_hsx').val(),
+                        ten: $('#ten_hsx').val()
+                    },
+                    dataType: 'json',
+                    success: function(res){
+                        if(res.status == 200){
+                            $('.modal_them').removeClass('active_them');
+                            DanhSach();
+                            alert('Cập nhật thành công');
+                        }else{
+                            alert('Không thể cậ nhật');
+                        }
+                    }
+                });
+            }
+        }
+
         function getThem(){
+            $('.header_title').html('Thêm mới');
+            $('#id_hsx').val('');
+            $('#ma_hsx').val('');
+            $('#ten_hsx').val('');
             $('.modal_them').addClass('active_them');
         }
         function Huy(){
             $('.modal_them').removeClass('active_them');
+        }
+        function getSua(id){
+            $('.header_title').html('Cập nhật');
+            $.ajax({
+                type: 'POST',
+                url: '/quanly/hangsanxuat/hang_san_xuat_json.php',
+                data: {
+                    id: id
+                },
+                dataType: 'json',
+                success: function(res){
+                    $('#id_hsx').val(res.id);
+                    $('#ma_hsx').val(res.ma);
+                    $('#ten_hsx').val(res.ten);
+                    $('.modal_them').addClass('active_them');
+                }
+            });
+        }
+        function LayGiaTri(){
+            var mang = document.getElementsByClassName('mang');
+            var list = '';
+            for(var i=0;i<mang.length; i++){
+                if(mang[i].checked==true){
+                    list += mang[i].value +",";
+                }
+            }
+            list = list.substring(0,list.length-1)
+            return list;
+        }
+
+        //Viết sự kiện cho AllCheck
+        function checkall(){
+            var checkall = document.getElementById('checkall');
+            var mang = document.getElementsByClassName('mang');
+            if(checkall.checked==true){
+                for(var i=0;i<mang.length; i++){
+                    mang[i].checked=true;
+                }
+            }else{
+                for(var i=0;i<mang.length; i++){
+                    mang[i].checked=false;
+                }
+            }
+        }
+
+        function Xoa(){
+            var giatri = LayGiaTri();
+            if(giatri == ''){
+                alert('Vui lòng chọn dòng cần xóa');
+            }else{
+                var kq = confirm('Thực hiện xóa các dòng được chọn?');
+                if(kq == true){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/quanly/hangsanxuat/hang_san_xuat_xoa.php',
+                        data: {
+                            chuoiID: giatri
+                        },
+                        dataType: 'json',
+                        success: function(res){
+                            if(res.status == 200){
+                                DanhSach();
+                                alert('Xóa thành công');
+                            }else{
+                                alert('Không thể xóa');
+                            }
+                        }
+                    });
+                }
+            }
         }
     </script>
 </body>

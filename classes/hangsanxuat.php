@@ -43,5 +43,33 @@
             }
         }
         
+        public function Them($ma, $ten){
+            $sql = "INSERT INTO hang_san_xuat (hang_san_xuat_ma, hang_san_xuat_ten) VALUES('$ma','$ten')";
+            $service = new dataservice();
+            return $service->ExecuteNonQuery($sql);
+        }
+
+        public function ChiTiet($id){
+            $sql = "SELECT h.hang_san_xuat_id, h.hang_san_xuat_ma, h.hang_san_xuat_ten 
+            FROM hang_san_xuat h 
+            WHERE h.hang_san_xuat_id=$id";
+            $service = new dataservice();
+            $rs = $service->ExecuteQuery($sql);
+            return isset($rs) ? $rs[0] : '';
+        }
+
+        public function CapNhat($id, $ma, $ten){
+            $sql = "UPDATE hang_san_xuat 
+            SET hang_san_xuat_ma ='$ma', hang_san_xuat_ten ='$ten' 
+            WHERE hang_san_xuat_id =$id";
+            $service = new dataservice();
+            return $service->ExecuteNonQuery($sql);
+        }
+        
+        public function Xoa($chuoiID){
+            $sql = "DELETE FROM hang_san_xuat WHERE hang_san_xuat_id IN ($chuoiID)";
+            $service = new dataservice();
+            return $service->ExecuteNonQuery($sql);
+        }
     }
 ?>
