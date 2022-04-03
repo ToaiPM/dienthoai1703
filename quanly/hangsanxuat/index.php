@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button onclick="DanhSach()" class="btn_submit">Tìm</button></td>
+                    <td><button onclick="DanhSach()" class="btn_submit"><i class="fa-solid fa-magnifying-glass" style="font-size:12px; color:#0b73e1"></i> Tìm</button></td>
                 </tr>
             </table>
         </div>

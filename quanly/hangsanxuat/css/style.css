@@ -34,6 +34,7 @@
     width: 80px;
     height: 25px;
     margin-top: 5px;
+    background-color: #fff;
 }
 /* Danh sách hãng sản xuất */
 .hangsanxuat_gr #danhsach{
@@ -61,6 +62,9 @@
     text-align: center;
     background-color: #04AA6D;
     color: white;
+}
+.capnhat_hsx{
+    color: #0171e8;
 }
 .capnhat_hsx:hover{
     cursor: pointer;
@@ -98,7 +102,11 @@
 .action_gr .chucnang_gr .thaotac{
     width: 90px;
     padding: 4px 0px;
-    cursor: pointer;      
+    cursor: pointer;
+    background-color: #fff;      
+}
+.action_gr .chucnang_gr .thaotac .icon{
+     
 }
 
 /* Form thêm hãng sản xuất */

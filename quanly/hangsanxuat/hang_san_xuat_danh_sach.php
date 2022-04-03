@@ -29,10 +29,10 @@
 <div class="action_gr">
     <p class="soluong_hangsanxuat">Có (<?php echo $tongsodong; ?>) hãng sản xuất</p>
     <div class="chucnang_gr">
-        <button onclick="getThem()" class="thaotac"><span class="icon"><i class="fa-solid fa-plus"></i></span> Thêm</button>
-        <button onclick="Xoa()" class="thaotac"><span class="icon"><i class="fa-solid fa-trash-can"></i></span> Xóa</button>
-        <button class="thaotac"><span class="icon"><i class="fa-solid fa-print"></i></span> In</button>
-        <button class="thaotac"><span class="icon"><i class="fa-solid fa-file-excel"></i></span> Xuất Excel</button>
+        <button onclick="getThem()" class="thaotac"><span class="icon" style="color:#023ff7"><i class="fa-solid fa-plus"></i></span> Thêm</button>
+        <button onclick="Xoa()" class="thaotac"><span class="icon" style="color:#f70202"><i class="fa-solid fa-trash-can"></i></span> Xóa</button>
+        <button class="thaotac"><span class="icon" style="color:#077d51"><i class="fa-solid fa-print"></i></span> In</button>
+        <button class="thaotac"><span class="icon" style="color:#077d51"><i class="fa-solid fa-file-excel"></i></span> Xuất Excel</button>
     </div>
 </div>
 <table>
